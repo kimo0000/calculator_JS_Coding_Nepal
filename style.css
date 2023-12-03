@@ -1,0 +1,90 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: grid;
+  place-items: center;
+}
+.wrapper {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 12px;
+}
+header input {
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+.content {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  gap: 10px;
+}
+button {
+  padding: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+}
+.icon {
+  display: flex;
+  gap: 15px;
+}
+.icon span {
+  position: absolute;
+  z-index: -1;
+}
+.icon span:first-of-type {
+  width: 50px;
+  height: 50px;
+  left: 50px;
+  bottom: 50px;
+  animation: moveicon 3s infinite linear;
+  transition: 0.3s;
+  background-color: red;
+}
+.icon span:last-of-type {
+  width: 60px;
+  height: 80px;
+  right: 50px;
+  bottom: 20px;
+  animation: moveicon 4s infinite linear;
+  transition: 0.4s;
+  background: blue;
+}
+.icon span:nth-child(2) {
+  width: 50px;
+  height: 70px;
+  background-color: #777;
+  left: 300px;
+  bottom: 10px;
+  animation: moveicon 5s infinite linear;
+  transition: 0.5s;
+}
+@keyframes moveicon {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 500px;
+    opacity: 0;
+  }
+}
